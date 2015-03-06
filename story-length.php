@@ -3,7 +3,7 @@
 Plugin Name: Story Length Taxonomy
 Plugin URI: http://stephanieleary.com/code/wordpress/story-length-taxonomy/
 Description: A plugin for fiction magazines. Creates a set of categories for story length (novella, novelette, etc.) according to SFWA's scale, and can automatically categorize posts appropriately based on word count.
-Version: 1.0
+Version: 1.0.1
 Author: Stephanie Leary
 Author URI: http://stephanieleary.com/
 
@@ -29,7 +29,7 @@ register_activation_hook( __FILE__, 'activate_fiction_tax' );
 function activate_fiction_tax() {
 	create_fiction_tax();
 	activate_fiction_terms();
-	$GLOBALS['wp_rewrite']->flush_rules();
+	flush_rewrite_rules();
 }
 
 function create_fiction_tax() {
